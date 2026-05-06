@@ -107,7 +107,7 @@ fun QuickBillScreen(viewModel: HastaKalaViewModel) {
             columns = GridCells.Fixed(3),
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp),
-            modifier = Modifier.height(220.dp)
+            modifier = Modifier.weight(1f)
         ) {
             items(products) { product ->
                 ProductCard(

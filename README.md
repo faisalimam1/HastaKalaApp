@@ -40,7 +40,7 @@ Made with ♥ by **Faisal Imam** — for our farmer community.
 
 ## 🛍️ Pre-loaded Products
 
-18 farmer-made domestic craft products included by default:
+18 farmer-made domestic craft products included by default with options to change/edit :
 
 | | | |
 |---|---|---|

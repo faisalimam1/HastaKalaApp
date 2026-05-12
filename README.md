@@ -58,10 +58,9 @@ This version focused on giving users full control over their data and making the
 - Custom app icon: warm orange-to-brown gradient with a white wheat stalk foreground
 - About screen updated with v1.5 badge and revised usage guide
 
-**Under the Hood**
-- Room DB migrated v2 → v3 using a proper `Migration` object (no destructive reset, no data loss)
-- Added `defaultPrice: Double?` and `isCustom: Boolean` columns to the products table
-- New DAO methods: `updateSale`, `deleteSale`, `updateProduct`, `deleteProduct`, `deleteStockByProduct`, `getMaxProductId`
+**Data Safety**
+- All existing sales and stock records are preserved automatically when the app updates — no data is lost
+- Products now store a default price and a flag indicating whether they were added by the user or came pre-loaded
 
 ---
 
@@ -71,17 +70,16 @@ This version focused on giving users full control over their data and making the
 The first release established the complete architecture and all five screens of the app, fully functional end-to-end.
 
 **What was built**
-- **Quick Bill screen** — 3-column product grid with tap-to-select, a 10-color picker, quantity and price fields with a running total, and a Save Sale button with a 2-second success toast
-- **Best Sellers screen** — MPAndroidChart pie chart showing the top 8 product+color combos by quantity sold, with a breakdown list below
-- **Stock screen** — full inventory list with a low-stock alert card (items below 3 units), and an Add Stock dialog with product and color dropdowns
-- **Income screen** — This Week / This Month toggle, an orange summary card with total earnings and sale count, and a full chronological sales history
-- **Splash screen** — animated 2.5-second splash with fade-in, wheat emoji, app name, and farmer tagline
-- **About screen** — scrollable app guide, feature list, and creator credits
-- **18 pre-loaded products** seeded into Room DB on every launch using `INSERT OR IGNORE` in `onOpen` callback
-- **MVVM architecture** with a single `HastaKalaViewModel`, `SaleRepository`, and three DAOs (Product, Sale, Stock)
-- **Room DB v2** with three tables: `products`, `sales`, `stock`
-- **Color-wise tracking** across all 10 craft colors (Red, Blue, Green, Yellow, Orange, Brown, Black, White, Pink, Purple)
-- Navigation using Jetpack Navigation Compose with a persistent bottom navigation bar and a separate About route
+- **Quick Bill screen** — a 3-column grid of all products; tap one, pick a color, enter quantity and price, see the running total, and save the sale with a single button
+- **Best Sellers screen** — a visual pie chart of the top 8 selling product-color combinations, with a ranked breakdown list below
+- **Stock screen** — full inventory list per product and color, a highlighted low-stock warning card for items running below 3 units, and an Add Stock dialog
+- **Income screen** — toggle between This Week and This Month, a summary card showing total earnings and number of sales, and a full chronological sales history
+- **Splash screen** — animated welcome screen with the app name, wheat icon, and farmer tagline
+- **About screen** — scrollable guide covering how to use every feature, a full feature list, and creator credits
+- **18 handcraft products** always available from the first launch — no setup needed
+- **Color-wise tracking** across 10 colors (Red, Blue, Green, Yellow, Orange, Brown, Black, White, Pink, Purple)
+- **All data stored on the device** — no internet, no cloud, works completely offline
+- **Smooth navigation** with a persistent bottom menu bar and a separate About page
 
 ---
 

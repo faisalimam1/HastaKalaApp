@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.hastakalashop.data.db.dao.ProductDao
 import com.example.hastakalashop.data.db.dao.SaleDao
@@ -12,7 +13,7 @@ import com.example.hastakalashop.data.db.entities.Product
 import com.example.hastakalashop.data.db.entities.Sale
 import com.example.hastakalashop.data.db.entities.Stock
 
-@Database(entities = [Product::class, Sale::class, Stock::class], version = 2, exportSchema = false)
+@Database(entities = [Product::class, Sale::class, Stock::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao
     abstract fun saleDao(): SaleDao
@@ -21,16 +22,24 @@ abstract class AppDatabase : RoomDatabase() {
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null
 
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE products ADD COLUMN defaultPrice REAL")
+                db.execSQL("ALTER TABLE products ADD COLUMN isCustom INTEGER NOT NULL DEFAULT 0")
+            }
+        }
+
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 Room.databaseBuilder(context, AppDatabase::class.java, "hastakala_db")
+                    .addMigrations(MIGRATION_2_3)
                     .fallbackToDestructiveMigration(dropAllTables = true)
                     .addCallback(object : Callback() {
                         override fun onOpen(db: SupportSQLiteDatabase) {
                             super.onOpen(db)
                             defaultProducts().forEach { p ->
                                 db.execSQL(
-                                    "INSERT OR IGNORE INTO products (id, name, emoji) VALUES (?, ?, ?)",
+                                    "INSERT OR IGNORE INTO products (id, name, emoji, defaultPrice, isCustom) VALUES (?, ?, ?, NULL, 0)",
                                     arrayOf<Any>(p.id, p.name, p.emoji)
                                 )
                             }

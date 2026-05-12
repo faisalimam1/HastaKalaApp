@@ -1,8 +1,10 @@
 package com.example.hastakalashop.data.db.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.hastakalashop.data.db.entities.Sale
 import kotlinx.coroutines.flow.Flow
 
@@ -10,6 +12,12 @@ import kotlinx.coroutines.flow.Flow
 interface SaleDao {
     @Insert
     suspend fun insertSale(sale: Sale)
+
+    @Update
+    suspend fun updateSale(sale: Sale)
+
+    @Delete
+    suspend fun deleteSale(sale: Sale)
 
     @Query("SELECT * FROM sales ORDER BY timestamp DESC")
     fun getAllSales(): Flow<List<Sale>>

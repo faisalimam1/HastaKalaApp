@@ -38,4 +38,15 @@ class SaleRepository(
             stockDao.insertStock(stock)
         }
     }
+
+    suspend fun insertProduct(product: Product) = productDao.insertProduct(product)
+    suspend fun updateProduct(product: Product) = productDao.updateProduct(product)
+    suspend fun deleteProduct(product: Product) {
+        productDao.deleteProduct(product)
+        stockDao.deleteStockByProduct(product.id)
+    }
+    suspend fun getMaxProductId(): Int? = productDao.getMaxProductId()
+
+    suspend fun updateSale(sale: Sale) = saleDao.updateSale(sale)
+    suspend fun deleteSale(sale: Sale) = saleDao.deleteSale(sale)
 }

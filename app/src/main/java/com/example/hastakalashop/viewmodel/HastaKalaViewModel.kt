@@ -91,6 +91,31 @@ class HastaKalaViewModel(private val repository: SaleRepository) : ViewModel() {
             )
         }
     }
+
+    fun addCustomProduct(name: String, emoji: String, defaultPrice: Double?) {
+        viewModelScope.launch {
+            val nextId = (repository.getMaxProductId() ?: 100) + 1
+            repository.insertProduct(
+                Product(id = nextId, name = name, emoji = emoji, defaultPrice = defaultPrice, isCustom = true)
+            )
+        }
+    }
+
+    fun updateProduct(product: Product) {
+        viewModelScope.launch { repository.updateProduct(product) }
+    }
+
+    fun deleteProduct(product: Product) {
+        viewModelScope.launch { repository.deleteProduct(product) }
+    }
+
+    fun updateSale(sale: Sale) {
+        viewModelScope.launch { repository.updateSale(sale) }
+    }
+
+    fun deleteSale(sale: Sale) {
+        viewModelScope.launch { repository.deleteSale(sale) }
+    }
 }
 
 class HastaKalaViewModelFactory(private val repository: SaleRepository) : ViewModelProvider.Factory {

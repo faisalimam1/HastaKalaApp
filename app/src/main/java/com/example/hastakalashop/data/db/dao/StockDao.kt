@@ -27,4 +27,7 @@ interface StockDao {
 
     @Query("UPDATE stock SET quantity = quantity - :sold WHERE productId = :productId AND color = :color")
     suspend fun decrementStock(productId: Int, color: String, sold: Int)
+
+    @Query("DELETE FROM stock WHERE productId = :productId")
+    suspend fun deleteStockByProduct(productId: Int)
 }

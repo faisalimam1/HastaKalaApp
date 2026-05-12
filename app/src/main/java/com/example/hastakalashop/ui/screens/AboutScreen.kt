@@ -37,7 +37,7 @@ fun AboutScreen() {
             color = Color(0xFFFFE0CC)
         ) {
             Text(
-                "Version 1.0",
+                "Version 1.5",
                 modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
                 fontSize = 12.sp,
                 color = Color(0xFFE07B39),
@@ -63,14 +63,14 @@ fun AboutScreen() {
         AboutCard(
             emoji = "📱",
             title = "How to Use",
-            content = "Quick Bill  —  Select a product, pick its color, enter quantity & price, then tap Save Sale to record the transaction.\n\nBest Seller  —  See which products and colors sell the most, displayed as a visual pie chart.\n\nStock  —  Track your inventory. Tap the + button to add new stock. A warning icon appears when any item is running low (less than 3 units).\n\nIncome  —  View total earnings for the current week or month, with a full list of every sale recorded."
+            content = "Quick Bill  —  Select a product, pick a color (the color name is shown when selected), enter quantity & price, then tap Save Sale. A confirmation popup appears if a sale exceeds ₹10,000. Long-press any product to edit its name, emoji, or default price — or delete it. Tap '+ Add Item' to add your own custom products.\n\nBest Seller  —  See which products and colors sell the most, displayed as a visual pie chart.\n\nStock  —  Track your inventory. Tap the + button to add new stock. A warning icon appears when any item is running low (less than 3 units).\n\nIncome  —  View total earnings for the current week or month, with a full list of every sale. Tap ✏️ to edit a sale or 🗑️ to delete it if recorded by mistake."
         )
         Spacer(Modifier.height(12.dp))
 
         AboutCard(
             emoji = "✨",
             title = "Features",
-            content = "• 100 % offline — works without internet\n• Record sales by product, color, quantity & price\n• 18 handcraft product categories pre-loaded\n• Color-wise inventory tracking\n• Low stock alerts (< 3 units)\n• Weekly & monthly income summary\n• Best-seller analytics with pie chart\n• Simple, farmer-friendly interface"
+            content = "• 100 % offline — works without internet\n• Record sales by product, color, quantity & price\n• 18 handcraft product categories pre-loaded\n• Add your own custom products with a name, emoji & default price\n• Edit or delete any product (pre-loaded or custom)\n• Color name shown on selection for clarity\n• Default price pre-fills automatically when billing\n• ₹10,000+ sale confirmation popup\n• Edit or delete any recorded sale\n• Color-wise inventory tracking\n• Low stock alerts (< 3 units)\n• Weekly & monthly income summary\n• Best-seller analytics with pie chart\n• Simple, farmer-friendly interface"
         )
         Spacer(Modifier.height(24.dp))
 

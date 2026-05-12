@@ -1,4 +1,4 @@
-package com.example.hastakalashop.ui.screens
+﻿package com.example.hastakalashop.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -148,14 +148,7 @@ fun AddStockDialog(products: List<Product>, onDismiss: () -> Unit, onConfirm: (P
                 Spacer(Modifier.height(4.dp))
                 var expandedProduct by remember { mutableStateOf(false) }
                 ExposedDropdownMenuBox(expanded = expandedProduct, onExpandedChange = { expandedProduct = it }) {
-                    OutlinedTextField(
-                        value = selectedProduct?.name ?: "",
-                        onValueChange = {},
-                        readOnly = true,
-                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedProduct) },
-                        modifier = Modifier.menuAnchor().fillMaxWidth(),
-                        shape = RoundedCornerShape(10.dp)
-                    )
+                    OutlinedTextField(value = selectedProduct?.name ?: "", onValueChange = {}, readOnly = true, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedProduct) }, modifier = Modifier.menuAnchor().fillMaxWidth(), shape = RoundedCornerShape(10.dp))
                     ExposedDropdownMenu(expanded = expandedProduct, onDismissRequest = { expandedProduct = false }) {
                         products.forEach { DropdownMenuItem(text = { Text("${it.emoji} ${it.name}") }, onClick = { selectedProduct = it; expandedProduct = false }) }
                     }
@@ -166,14 +159,7 @@ fun AddStockDialog(products: List<Product>, onDismiss: () -> Unit, onConfirm: (P
                 Spacer(Modifier.height(4.dp))
                 var expandedColor by remember { mutableStateOf(false) }
                 ExposedDropdownMenuBox(expanded = expandedColor, onExpandedChange = { expandedColor = it }) {
-                    OutlinedTextField(
-                        value = selectedColor,
-                        onValueChange = {},
-                        readOnly = true,
-                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedColor) },
-                        modifier = Modifier.menuAnchor().fillMaxWidth(),
-                        shape = RoundedCornerShape(10.dp)
-                    )
+                    OutlinedTextField(value = selectedColor, onValueChange = {}, readOnly = true, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expandedColor) }, modifier = Modifier.menuAnchor().fillMaxWidth(), shape = RoundedCornerShape(10.dp))
                     ExposedDropdownMenu(expanded = expandedColor, onDismissRequest = { expandedColor = false }) {
                         CRAFT_COLORS.forEach { DropdownMenuItem(text = { Text(it) }, onClick = { selectedColor = it; expandedColor = false }) }
                     }

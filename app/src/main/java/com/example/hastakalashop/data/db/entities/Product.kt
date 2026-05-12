@@ -7,5 +7,7 @@ import androidx.room.PrimaryKey
 data class Product(
     @PrimaryKey val id: Int,
     val name: String,
-    val emoji: String
+    val emoji: String,
+    val defaultPrice: Double? = null,
+    val isCustom: Boolean = false
 )

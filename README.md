@@ -6,6 +6,20 @@
 
 ---
 
+## ▶ Try the Live Demo
+
+> **No installation needed — runs directly in your browser.**
+
+[![Live Demo — Try HastaKala Now](https://img.shields.io/badge/▶%20Live%20Demo-Try%20HastaKala%20Now-E07B39?style=for-the-badge&logo=android&logoColor=white)](https://appetize.io/app/b_gqquop42ru7kglqcfgkpc6rgri)
+
+**[https://appetize.io/app/b_gqquop42ru7kglqcfgkpc6rgri](https://appetize.io/app/b_gqquop42ru7kglqcfgkpc6rgri)**
+
+Click the link above to launch HastaKala on a virtual Android device in your browser. Tap around, record a sale, check the best-seller chart — the full app, live.
+
+> *Hosted on [Appetize.io](https://appetize.io) · No sign-in required · Works on desktop and mobile browsers*
+
+---
+
 ## 📖 About
 
 **HastaKala** (हस्तकला — meaning *Handicraft* in Hindi) is a production-quality Android app designed for the Indian farming and rural artisan community. Farmers who make and sell handmade products have no easy way to run their business digitally. HastaKala brings them a clean, intuitive interface — no internet, no account, no complexity.

@@ -1,6 +1,6 @@
 # 🌾 HastaKala — Farmer's Craft Shop Manager
 
-> An offline-first Android shop management app built for farmers and rural artisans — record sales, track inventory, and analyse earnings, all without needing the internet.
+> An offline-first Android shop management app built for farmers and rural artisans which record sales, track inventory, and analyse earnings, all without needing the internet.
 
 **Current Version: v1.5** &nbsp;|&nbsp; Kotlin + Jetpack Compose + Room DB + MVVM &nbsp;|&nbsp; Min SDK 26 (Android 8.0+)
 
@@ -12,7 +12,7 @@
 
 The app has gone through two versions of active development, growing from a solid foundation in v1.0 into a feature-rich, user-hardened tool in v1.5 — with real-world edge cases handled, data safety built in, and a polished UI throughout.
 
-Made with ♥ by **Faisal Imam** — for our farmer community.
+Made with ♥ by **Faisal Imam** — for our farmer and artisan community.
 
 ---
 
@@ -51,7 +51,7 @@ This version focused on giving users full control over their data and making the
 
 ---
 
-### v1.0 — May 2026
+### v1.0 — April 2026
 > **Theme: Core Business Logic — Full Working App from Scratch**
 
 The first release established the complete architecture and all five screens of the app, fully functional end-to-end.
@@ -92,7 +92,7 @@ The first release established the complete architecture and all five screens of 
 |--------|------|----------------|
 | 🧾 **Quick Bill** | Product grid, color picker, qty/price, save | Custom products, edit/delete, optional color, color names, ₹10k guard |
 | 📊 **Best Seller** | Pie chart + breakdown list | Tap-to-detail interactive slices |
-| 📦 **Stock** | Inventory list, low-stock alert, add stock | — |
+| 📦 **Stock** | Inventory list, low-stock alert, add stock | Updated |
 | 💰 **Income** | Period toggle, summary card, history | Edit ✏️ and delete 🗑️ per sale |
 | ℹ️ **About** | Static guide, v1.0 badge | Updated guide, v1.5 badge |
 
@@ -148,7 +148,7 @@ No API keys, no internet setup, no configuration needed. Just build and run.
 
 ## 👨‍💻 Developer
 
-**Faisal Imam** (1CD22CS035)
+**Faisal Imam**
 Built with dedication for the Indian farmer and artisan community.
 
 ---
